@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6b76cfa9f060f49afadbdf68cfa070, type: 3}
+  m_Name: frogLeg
+  m_EditorClassIdentifier: 
+  mesh: {fileID: -606419294924500904, guid: 6bc7a94aa9d176146a6e694d5a75bdd7, type: 3}
+  mat: {fileID: 2100000, guid: bac80723cab6ede4690369cd04a77f82, type: 2}
+  tags: 04000000
+  proccesedForm: {fileID: 11400000}

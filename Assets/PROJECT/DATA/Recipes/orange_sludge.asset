@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e3e227084ee4f49995e776bd6713fc, type: 3}
+  m_Name: orange_sludge
+  m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: 6bf30a0a2ecad3244b48d63aa0821f59, type: 2}
+  - {fileID: 11400000, guid: 5cd6bcd4a69ef7247a1b42eb1fe167d7, type: 2}
+  - {fileID: 11400000, guid: cbd0e751de5b4fe41bc5bde0ac4c042b, type: 2}
+  result: {fileID: 6402123894239916906, guid: c49197ff9ec9d2d4baacbc0acd8b01d3, type: 3}
