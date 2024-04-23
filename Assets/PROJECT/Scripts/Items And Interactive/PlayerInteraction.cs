@@ -42,11 +42,44 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    public void UIIgredientProcess()
+    {
+        if(station != null)
+        {
+            currentInteraction.PrepareItem();
+        }
+    }
+
+
     public void OnIngedientProccess(InputAction.CallbackContext ctx)
     {
         if(ctx.started && station != null)
         {
             currentInteraction.PrepareItem();
+        }
+    }
+
+    public void UIInteract()
+    {
+        if(currentInteraction != null)
+        {
+            if (!IsHoldingObject)
+            {
+                currentItem = currentInteraction.GetItem();
+                if (currentItem != null)
+                {
+                    currentItem.PlaceItem(handSlot);
+
+                    IsHoldingObject = true;
+                }
+            }
+            else
+            {
+                if(currentInteraction.PlaceItem(currentItem))
+                {
+                    IsHoldingObject = false;
+                }
+            }
         }
     }
 

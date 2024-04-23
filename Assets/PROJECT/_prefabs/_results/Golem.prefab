@@ -342,11 +342,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightDetectionRayOffset: 2.8
-  wallDetectionRange: 3.5
+  wallDetectionRange: 2.1
   moveSpeed: 3
   walls:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 9344
   startMoving: 1
 --- !u!114 &1706726127328533065
 MonoBehaviour:
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c408410bce096a641a2536c4838bba52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: 000000000200000006000000
+  tags: 000000000200000007000000
 --- !u!54 &7043500762046552376
 Rigidbody:
   m_ObjectHideFlags: 0

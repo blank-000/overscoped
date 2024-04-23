@@ -10,14 +10,14 @@ public class FrogAnimEvents : MonoBehaviour
 
     public void LockRotation()
     {
-        Debug.Log("jump");
+        // Debug.Log("jump");
         mainFrog.canRotate = false;
         
     }
 
     public void UnlockRotation()
     {
-        Debug.Log("Land");
+        // Debug.Log("Land");
         mainFrog.canRotate = true;
         
     }

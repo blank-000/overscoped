@@ -16,7 +16,8 @@ public class RecipeBookDisplay : Interactive
     int interationIndex;
     void Awake()
     {
-        UIsys = GetComponentInChildren<EventSystem>();
+        // UIsys = GetComponentInChildren<EventSystem>();
+        UIsys = FindFirstObjectByType<EventSystem>();
     }
 
     public override Item GetItem()

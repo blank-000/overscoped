@@ -10,7 +10,7 @@ public class Fire : MonoBehaviour
     {
         if(this.transform.parent.CompareTag("Ice"))
         {
-            Debug.Log("melting the ice");
+            
             Destroy(this.transform.parent.gameObject);
         }
     }
@@ -36,12 +36,12 @@ public class Fire : MonoBehaviour
         {   
             foreach(Transform t in c)
             {
-                Debug.Log("currently proccesing" + t);
+                
                 MeshRenderer rend = t.GetComponent<MeshRenderer>();
 
                 if(rend != null)
                 {   
-                    Debug.Log("Randomizing Settings");
+                   
                     Material mat = rend.material;
                     mat.SetFloat("_scaleA", Random.Range(4f, 5.5f));
                     mat.SetFloat("_scaleB", Random.Range(1f, 2f));

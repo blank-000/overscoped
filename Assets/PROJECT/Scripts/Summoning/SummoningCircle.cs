@@ -33,6 +33,7 @@ public class SummoningCircle : MonoBehaviour
     [SerializeField] float timeToAnimationComplete = 3f;
     float timer;
 
+
     void Update()
     {
         if(IsAnimating)
@@ -113,8 +114,10 @@ public class SummoningCircle : MonoBehaviour
 
         // I hate AI 
         GameObject resultPrefab = recipeBook.EvaluateRecipe(itemTags, canSummonGolem);
+
         if (resultPrefab != null)
         {
+            
             if(resultPrefab.GetComponent<Golem>()) canSummonGolem = false;
 
             // Instantiate the result prefab as a child of a temporary GameObject

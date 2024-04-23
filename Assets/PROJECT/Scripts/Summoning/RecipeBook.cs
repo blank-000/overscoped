@@ -29,11 +29,8 @@ public class RecipeBook : MonoBehaviour
     {
         if(canSummonGolem)
         {
-            Debug.Log("List contents:");
-            foreach (var item in itemTags)
-            {
-                Debug.Log(item);
-            }
+            
+
             List<GameObject> matchingPrefabs = new List<GameObject>();
 
             foreach (GameObject prefab in prefabs)
@@ -48,8 +45,32 @@ public class RecipeBook : MonoBehaviour
             }
 
             if (matchingPrefabs.Count > 0)
-            {
-                return matchingPrefabs[Random.Range(0, matchingPrefabs.Count)];
+            {   
+                int randomIndex = Random.Range(0, matchingPrefabs.Count);
+                if(matchingPrefabs[randomIndex] != lastSpawned)
+                {
+                    //for some reason this works ok most of the time but has a problem with the tornado and white sludge(white, sus), it spawns many tornados(sus) instead of switching
+                    lastSpawned = matchingPrefabs[randomIndex];
+                    return matchingPrefabs[randomIndex];
+                } else 
+                {
+                    if(randomIndex > 0)
+                    {
+                        int secondRandomIndex = Random.Range(0, randomIndex);
+                        lastSpawned = matchingPrefabs[secondRandomIndex];
+                        return matchingPrefabs[secondRandomIndex];
+                    } else if (matchingPrefabs.Count > 1)
+                    {
+                        lastSpawned = matchingPrefabs[randomIndex+1];
+                        return matchingPrefabs[randomIndex+1];
+                    }else{
+                        lastSpawned = matchingPrefabs[randomIndex];
+                        return matchingPrefabs[randomIndex];
+                    }
+
+                }
+                 
+                
             }
             else
             {
@@ -57,7 +78,7 @@ public class RecipeBook : MonoBehaviour
             }
         } else 
         {
-                        Debug.Log("List contents:");
+            
             foreach (var item in itemTags)
             {
                 Debug.Log(item);
@@ -73,7 +94,7 @@ public class RecipeBook : MonoBehaviour
                     {
                         matchingPrefabs.Add(prefab);
                     } 
-                    //Debug.Log(prefab);
+                    Debug.Log(prefab);
                 }
                 
             }
@@ -83,10 +104,28 @@ public class RecipeBook : MonoBehaviour
                 int randomIndex = Random.Range(0, matchingPrefabs.Count);
                 if(matchingPrefabs[randomIndex] != lastSpawned)
                 {
-                    // implement some pseudo randomness to prevent repeating recipes producing the same result if they can summon multiple things
+                    //for some reason this works ok most of the time but has a problem with the tornado and white sludge(white, sus), it spawns many tornados(sus) instead of switching
+                    lastSpawned = matchingPrefabs[randomIndex];
+                    return matchingPrefabs[randomIndex];
+                } else 
+                {
+                    if(randomIndex > 0)
+                    {
+                        int secondRandomIndex = Random.Range(0, randomIndex);
+                        lastSpawned = matchingPrefabs[secondRandomIndex];
+                        return matchingPrefabs[secondRandomIndex];
+                    } else if (matchingPrefabs.Count > 1)
+                    {
+                        lastSpawned = matchingPrefabs[randomIndex+1];
+                        return matchingPrefabs[randomIndex+1];
+                    }else{
+                        lastSpawned = matchingPrefabs[randomIndex];
+                        return matchingPrefabs[randomIndex];
+                    }
+
                 }
                  
-                return matchingPrefabs[randomIndex];
+                
             }
             else
             {

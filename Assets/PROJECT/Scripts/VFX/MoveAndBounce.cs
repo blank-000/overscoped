@@ -38,7 +38,7 @@ public class MoveAndBounce : MonoBehaviour
         Debug.DrawRay(transform.position, directionToMoveTo * wallDetectionRange, Color.red);
         if(Physics.Raycast(ray,out hit, wallDetectionRange,walls))
         {
-            Debug.Log("a wall has been encountered, Evasive Manuvers Activate");
+            // Debug.Log("a wall has been encountered, Evasive Manuvers Activate");
             directionToMoveTo = Vector3.Reflect(directionToMoveTo, hit.normal );
             directionToMoveTo = new Vector3(directionToMoveTo.x, 0,directionToMoveTo.z).normalized;
         }

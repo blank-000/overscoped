@@ -14,6 +14,12 @@ public class Summon : MonoBehaviour
         _anim = GetComponentInChildren<PlayerAnim>();
     }
 
+    public void UISummon()
+    {
+            circle.Activate();
+            _anim.PlaySummonClip();
+    }
+
     public void OnSummon(InputAction.CallbackContext ctx)
     {
         if(ctx.started){

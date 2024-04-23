@@ -32,9 +32,30 @@ public class TopDownMovement : MonoBehaviour
     float maxTimeWithDisabledControls = 3f;
     float controlReEnableTimer;
     bool controlsDisabled;
-    // Start is called before the first frame update
+    
+ 
+    public OnScreenStickCustom movementStick;
+ 
+
+ 
+    public void OnStickMove(Vector2 direction)
+    {
+        _moveInput = new Vector3(direction.x, 0F, direction.y);
+    }
+ 
+    public void OnStickRelease()
+    {
+        _moveInput = Vector3.zero;
+    }
+
+
+
+
+
     void Start()
     {
+        movementStick.onJoystickMove.AddListener(OnStickMove);
+        movementStick.onJoystickRelease.AddListener(OnStickRelease);
         sounds = GetComponent<PlaySounds>();
         RB = GetComponent<Rigidbody>();
         _dashTimer = dashCooldown;
@@ -94,7 +115,7 @@ public class TopDownMovement : MonoBehaviour
         }
         if(!CheckGround())
         {   
-            Debug.Log("apply more gravity");
+           
             RB.AddForce(Vector3.down * FallSpeed, ForceMode.Acceleration);
             MaxSpeed = 100;
         }  else {
@@ -162,9 +183,18 @@ public class TopDownMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx)
     {
         Vector2 _input = ctx.ReadValue<Vector2>();
+ 
+        
         _moveInput = new Vector3(_input.x, 0f, _input.y);
     }
 
+    public void UIDash()
+    {
+        if(_dashTimer < 0){
+            Dash();
+            _dashTimer = dashCooldown; 
+        }
+    }
     public void OnDash(InputAction.CallbackContext ctx){
         if(ctx.performed && _dashTimer < 0){
             Dash();

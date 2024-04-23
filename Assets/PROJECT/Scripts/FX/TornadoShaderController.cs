@@ -27,10 +27,10 @@ public class TornadoShaderController : MonoBehaviour
 
             }
         }
-        foreach(Material mat in materials)
-        {
-            Debug.Log("mat: " + mat.name);
-        }
+        // foreach(Material mat in materials)
+        // {
+        //     Debug.Log("mat: " + mat.name);
+        // }
     }
     void Start()
     {
